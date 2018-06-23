@@ -13,6 +13,8 @@ import retrofit2.Call;
 import retrofit2.Response;
 
 /**
+ * This is the implementation of {@link DataHandler} interface.
+ *
  * Created by rahul1993 on 6/22/2018.
  */
 
@@ -26,12 +28,6 @@ public class DataHandlerImpl implements DataHandler {
     }
     return mDataHandler;
   }
-
-//  @Override
-//  public void fetchData(String urlString, Callback<Cuisine> callback) {
-//    FetchJsonAsyncTask asyncTask = new FetchJsonAsyncTask(callback);
-//    asyncTask.execute(urlString);
-//  }
 
   @Override
   public void fetchRestaurantData(String query, final Callback<List<Restaurant>> callback) {

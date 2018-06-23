@@ -24,6 +24,11 @@ public class HomePresenter implements HomeContract.Presenter {
     mDataHandler = DataHandlerImpl.getInstance();
   }
 
+/**
+ *  This method Load the data from {@link DataHandler}.
+ *
+ *  @param query User input text
+ */
   @Override
   public void fetchRestaurant(String query) {
     mDataHandler.fetchRestaurantData(query, new DataHandler.Callback<List<Restaurant>>() {

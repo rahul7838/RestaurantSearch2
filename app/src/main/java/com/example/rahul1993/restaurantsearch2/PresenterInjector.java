@@ -5,6 +5,8 @@ import com.example.rahul1993.restaurantsearch2.ui.HomeContract;
 import com.example.rahul1993.restaurantsearch2.ui.HomePresenter;
 
 /**
+ * Encapsulate creation of presenter
+ *
  * Created by rahul1993 on 6/22/2018.
  */
 

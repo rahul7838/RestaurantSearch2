@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">RestaurantSearch2</string>
 
-    <!--home fragment -->
-
+    <!--Search fragment -->
     <string name="hint">Search for restaurant, cuisine</string>
     <string name="search_button">Search</string>
+    <string name="search_box_empty_text">Please enter some text!</string>
+    
+    <!--Restaurant list Adapter-->
+    <string name="approx_cost">Approx Rs </string>
+    <string name="number_of_person">/- for 2</string>
+    
 </resources>

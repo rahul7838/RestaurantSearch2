@@ -20,12 +20,15 @@ import com.example.rahul1993.restaurantsearch2.utils.ConstantUtil;
 import java.util.List;
 
 /**
+ * This fragment shows the list of cuisine
+ *
  * Created by rahul1993 on 6/22/2018.
  */
 
 public class ListRestaurantFragment extends Fragment{
   private RecyclerView mRecyclerView;
   private static final String TAG = ListRestaurantFragment.class.getSimpleName();
+
   public ListRestaurantFragment(){
 
   }
@@ -35,11 +38,13 @@ public class ListRestaurantFragment extends Fragment{
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
     super.onCreateView(inflater, container, savedInstanceState);
     View view = inflater.inflate(R.layout.restaurant_list, container, false);
-    List<Restaurant> restaurant1List =(List<Restaurant>) getArguments().get(ConstantUtil.RESTAURANT_LIST_KEY);
+    Bundle bundle = getArguments();
+    List<Restaurant> restaurant1List =(List<Restaurant>) bundle.get(ConstantUtil.RESTAURANT_LIST_KEY);
 //    Log.d(TAG, list.get(0).getName());
     mRecyclerView = view.findViewById(R.id.recycler_view);
 
     setLayout(restaurant1List);
+    bundle.remove(ConstantUtil.RESTAURANT_LIST_KEY);
 
     return view;
   }
@@ -50,7 +55,7 @@ public class ListRestaurantFragment extends Fragment{
     LinearLayoutManager llm = new LinearLayoutManager(getActivity());
     llm.setOrientation(LinearLayoutManager.VERTICAL);
     mRecyclerView.setLayoutManager(llm);
-    RestaurantListAdapter adapter = new RestaurantListAdapter(restaurant1List);
+    RestaurantListAdapter adapter = new RestaurantListAdapter(restaurant1List, getContext());
     mRecyclerView.setAdapter(adapter);
   }
 }

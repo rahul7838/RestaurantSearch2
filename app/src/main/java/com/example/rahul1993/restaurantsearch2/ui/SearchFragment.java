@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.rahul1993.restaurantsearch2.PresenterInjector;
 import com.example.rahul1993.restaurantsearch2.R;
@@ -19,6 +20,8 @@ import com.example.rahul1993.restaurantsearch2.data.Model.Restaurant_;
 import java.util.List;
 
 /**
+ * This fragment shows the search box.
+ *
  * Created by rahul1993 on 22/6/2018.
  */
 
@@ -34,12 +37,10 @@ public class SearchFragment extends Fragment implements View.OnClickListener,
   HomeContract.Presenter mPresenter;
   ProgressBar progressBar;
 
-  String urlString = "https://developers.zomato.com/api/v2.1/search?q=";
-  //"https://www.googleapis.com/apiName/version/entity?maxResults=7&q="
-
+//  String urlString = "https://developers.zomato.com/api/v2.1/search?q=";
 
   public SearchFragment(){
-      // empty constructor is required.
+      // empty constructor
 
   }
 
@@ -90,11 +91,14 @@ public class SearchFragment extends Fragment implements View.OnClickListener,
   public void onClick(View v) {
     queryText = editText.getText().toString();
     Log.i(TAG, queryText);
-//    urlString = "https://developers.zomato.com/api/v2.1/search?q=" + queryText;
-    progressBar.setVisibility(View.VISIBLE);
-//    listener.onSearchClick(queryText);
-    mPresenter.fetchRestaurant(queryText);
-    queryText = "";
+    if(queryText.isEmpty()){
+      Toast.makeText(getActivity(), getString(R.string.search_box_empty_text), Toast.LENGTH_SHORT).show();
+    }
+    else{
+      progressBar.setVisibility(View.VISIBLE);
+      mPresenter.fetchRestaurant(queryText);
+      queryText = "";
+    }
   }
 }
 

@@ -14,6 +14,10 @@ import com.example.rahul1993.restaurantsearch2.utils.ConstantUtil;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ *  Home Screen activity.
+ */
+
 public class HomeActivity extends AppCompatActivity implements SearchFragment.onSearchClickListener{
 private static final String TAG = HomeActivity.class.getSimpleName();
   @Override
