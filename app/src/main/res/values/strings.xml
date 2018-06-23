@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RestaurantSearch2</string>
+
+    <!--home fragment -->
+
+    <string name="hint">Search for restaurant, cuisine</string>
+    <string name="search_button">Search</string>
+</resources>
